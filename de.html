@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Dé</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffdde1;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+            height: 100px; /* Garante espaço para os botões */
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            position: absolute;
+        }
+        #sim {
+            background-color: #4CAF50;
+            color: white;
+            left: 30%;
+        }
+        #nao {
+            background-color: #f44336;
+            color: white;
+            left: 60%;
+        }
+        #mensagem {
+            display: none;
+            font-size: 24px;
+            color: #4CAF50;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vem pro Paraná comigo 🤓☝️?</h1>
+        <div class="buttons">
+            <button id="sim">Sim</button>
+            <button id="nao">Não</button>
+        </div>
+        <p id="mensagem">ÓTIMA ESCOLHA!!! 🎉</p>
+    </div>
+
+    <script>
+        document.getElementById("nao").addEventListener("click", function() {
+            let x = Math.random() * (window.innerWidth - this.clientWidth - 20); // Evita sair da tela
+            let y = Math.random() * (window.innerHeight - this.clientHeight - 20);
+            this.style.left = `${x}px`;
+            this.style.top = `${y}px`;
+        });
+
+        document.getElementById("sim").addEventListener("click", function() {
+            document.getElementById("mensagem").style.display = "block";
+        });
+    </script>
+</body>
+</html>
